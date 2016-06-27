@@ -6,7 +6,7 @@ import java.util.Map;
 import com.java.entity.User;
 
 /**
- * ÓÃ»§DAO½Ó¿Ú
+ * ç”¨æˆ·DAOæ¥å£
  * 
  * @author Administrator
  * 
@@ -14,42 +14,42 @@ import com.java.entity.User;
 public interface UserDao {
 	
 	/**
-	 * ÓÃ»§µÇÂ¼
+	 * ç”¨æˆ·ç™»å½•
 	 * @param user
 	 * @return
 	 */
 	public User login(User user);
 	
 	/**
-	 * ÓÃ»§²éÑ¯
+	 * ç”¨æˆ·æŸ¥è¯¢
 	 * @param map
-	 * @returnÓÃ»§¼¯ºÏ
+	 * @returnç”¨æˆ·é›†åˆ
 	 */
 	public List<User> find(Map<String, Object> map);
 	
 	/**
-	 * »ñÈ¡×Ü¼ÇÂ¼Êı
+	 * è·å–æ€»è®°å½•æ•°
 	 * @param map
-	 * @return»ñÈ¡µÄtotalÊı
+	 * @returnè·å–çš„totalæ•°
 	 */
 	public Long getTotal(Map<String, Object> map);
 	
 	/**
-	 * ĞŞ¸ÄÓÃ»§
+	 * ä¿®æ”¹ç”¨æˆ·
 	 * @param user
-	 * @returnÓ°ÏìµÄ¼ÇÂ¼Êı
+	 * @returnå½±å“çš„è®°å½•æ•°
 	 */
 	public int update(User user);
 	
 	/**
-	 * Ìí¼ÓÓÃ»§
+	 * æ·»åŠ ç”¨æˆ·
 	 * @param user
-	 * @returnÓ°ÏìµÄ¼ÇÂ¼Êı
+	 * @returnå½±å“çš„è®°å½•æ•°
 	 */
 	public int add(User user);
 	
 	/**
-	 * É¾³ıÓÃ»§
+	 * åˆ é™¤ç”¨æˆ·
 	 * @param id
 	 * @return
 	 */

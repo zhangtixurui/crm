@@ -24,7 +24,7 @@ import com.java.util.StringUtil;
 import com.sun.mail.iap.Response;
 
 /**
- * ÓÃ»§Controller²ã
+ * ç”¨æˆ·Controllerå±‚
  * @author Administrator
  *
  */
@@ -36,7 +36,7 @@ public class UserController {
 	private UserService userService;
 	
 	/**
-	 * É¾³ıÓÃ»§
+	 * åˆ é™¤ç”¨æˆ·
 	 * @param ids
 	 * @param res
 	 * @return
@@ -55,7 +55,7 @@ public class UserController {
 	}
 	
 	/**
-	 * Ìí¼Ó»òÕßĞŞ¸Ä
+	 * æ·»åŠ æˆ–è€…ä¿®æ”¹
 	 * @param user
 	 * @param res
 	 * @return
@@ -63,7 +63,7 @@ public class UserController {
 	 */
 	@RequestMapping("/save")
 	public String save(User user,HttpServletResponse res) throws Exception{
-		//²Ù×÷¼ÇÂ¼ÌõÊı£¬³õÊ¼»¯Îª0
+		//æ“ä½œè®°å½•æ¡æ•°ï¼Œåˆå§‹åŒ–ä¸º0
 		int resultTotal = 0;
 		if (user.getId() == null) {
 			resultTotal = userService.add(user);
@@ -71,7 +71,7 @@ public class UserController {
 			resultTotal = userService.update(user);
 		}
 		JSONObject jsonObject = new JSONObject();
-		if(resultTotal > 0){   //ËµÃ÷ĞŞ¸Ä»òÌí¼Ó³É¹¦
+		if(resultTotal > 0){   //è¯´æ˜ä¿®æ”¹æˆ–æ·»åŠ æˆåŠŸ
 			jsonObject.put("success", true);
 		}else{
 			jsonObject.put("success", false);
@@ -81,7 +81,7 @@ public class UserController {
 	}
 	
 	/**
-	 * ÓÃ»§µÇÂ¼
+	 * ç”¨æˆ·ç™»å½•
 	 * @param user
 	 * @param request
 	 * @return
@@ -92,7 +92,7 @@ public class UserController {
 		User resultUser = userService.login(user);
 		if (resultUser == null) {
 			request.setAttribute("user", resultUser);
-			request.setAttribute("errorMsg", "ÓÃ»§Ãû»òÃÜÂë´íÎó");
+			request.setAttribute("errorMsg", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯");
 			return "login";
 		}else {
 			HttpSession session = request.getSession();
@@ -102,7 +102,7 @@ public class UserController {
 	}
 	
 	/**
-	 * ÓÃ»§·ÖÒ³²éÑ¯
+	 * ç”¨æˆ·åˆ†é¡µæŸ¥è¯¢
 	 * @param page
 	 * @param rows
 	 * @param s_user

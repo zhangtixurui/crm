@@ -1,14 +1,14 @@
 package com.java.util;
 
 /**
- * ×Ö·û´®¹¤¾ßÀà
+ * å­—ç¬¦ä¸²å·¥å…·ç±»
  * @author 
  *
  */
 public class StringUtil {
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÊÇ¿Õ
+	 * åˆ¤æ–­æ˜¯å¦æ˜¯ç©º
 	 * @param str
 	 * @return
 	 */
@@ -21,7 +21,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñ²»ÊÇ¿Õ
+	 * åˆ¤æ–­æ˜¯å¦ä¸æ˜¯ç©º
 	 * @param str
 	 * @return
 	 */
@@ -34,7 +34,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * ¸ñÊ½»¯Ä£ºı²éÑ¯
+	 * æ ¼å¼åŒ–æ¨¡ç³ŠæŸ¥è¯¢
 	 * @param str
 	 * @return
 	 */

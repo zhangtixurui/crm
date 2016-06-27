@@ -12,7 +12,7 @@ import com.java.entity.User;
 import com.java.service.UserService;
 
 /**
- * UserServiceÊµÏÖÀà
+ * UserServiceå®ç°ç±»
  * @author Administrator
  *
  */

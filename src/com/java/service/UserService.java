@@ -6,48 +6,48 @@ import java.util.Map;
 import com.java.entity.User;
 
 /**
- * UserService接口
+ * UserService鎺ュ彛
  * @author Administrator
  *
  */
 public interface UserService {
 	
 	/**
-	 * 用户登录
+	 * 鐢ㄦ埛鐧诲綍
 	 * @param user
 	 * @return
 	 */
 	public User login(User user);
 	/**
-	 * 用户查询
+	 * 鐢ㄦ埛鏌ヨ
 	 * @param map
 	 * @return
 	 */
 	public List<User> find(Map<String, Object> map);
 	
 	/**
-	 * 获取总记录数
+	 * 鑾峰彇鎬昏褰曟暟
 	 * @param map
 	 * @return
 	 */
 	public Long getTotal(Map<String, Object> map);
 	
 	/**
-	 * 修改用户
+	 * 淇敼鐢ㄦ埛
 	 * @param user
-	 * @return影响的记录数
+	 * @return褰卞搷鐨勮褰曟暟
 	 */
 	public int update(User user);
 	
 	/**
-	 * 添加用户
+	 * 娣诲姞鐢ㄦ埛
 	 * @param user
-	 * @return影响的记录数
+	 * @return褰卞搷鐨勮褰曟暟
 	 */
 	public int add(User user);
 	
 	/**
-	 * 删除用户
+	 * 鍒犻櫎鐢ㄦ埛
 	 * @param id
 	 * @return
 	 */

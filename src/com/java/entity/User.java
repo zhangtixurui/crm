@@ -1,7 +1,7 @@
 package com.java.entity;
 
 /**
- * ÓÃ»§ÊµÌå
+ * ï¿½Ã»ï¿½Êµï¿½ï¿½
  * @author Administrator
  *
  */
@@ -12,7 +12,7 @@ public class User {
 	private String trueName;
 	private String email;
 	private String phone;
-	private String roleName;	//½ÇÉ«Ãû³Æ£ºÏµÍ³¹ÜÀíÔ±¡¢ÏúÊÛÖ÷¹Ü¡¢¿Í»§¾­Àí¡¢¸ß¹Ü
+	private String roleName;	//è§’è‰²åç§°ï¼šç³»ç»Ÿç®¡ç†å‘˜ã€é”€å”®ä¸»ç®¡ã€å®¢æˆ·ç»ç†ã€é«˜ç®¡
 	public Integer getId() {
 		return id;
 	}

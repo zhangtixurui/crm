@@ -12,9 +12,12 @@ import javax.servlet.http.HttpSession;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.java.entity.PageBean;
 import com.java.entity.User;
@@ -31,7 +34,7 @@ import com.sun.mail.iap.Response;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-	
+	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	@Resource
 	private UserService userService;
 	
@@ -127,5 +130,22 @@ public class UserController {
 		return null;
 	}
 	
+	/**
+	 * 修改用户密码
+	 * @param password
+	 * @param userName
+	 * @param res
+	 * @return
+	 * @throws Exception
+	 */
+	/*
+	@RequestMapping("/modifyPassword")
+	public String modifyPassword(@RequestParam(value="password",required=false) String password,@RequestParam(value="userName",required=false) String userName,User user,HttpServletResponse res){
+//		User u=userService.
+		
+		
+		return null;
+	}
+	*/
 	
 }

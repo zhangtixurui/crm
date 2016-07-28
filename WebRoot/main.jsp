@@ -99,10 +99,16 @@
 				<a href="javascript:openTab('产品信息查询','productSearch.jsp','icon-cpxxgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-cpxxgl'" style="width: 150px;">产品信息查询</a>
 				<a href="javascript:openTab('用户信息管理','userManage.jsp','icon-user')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user'" style="width: 150px;">用户信息管理</a>
 			</div>
-			<div title="系统管理"  data-options="iconCls:'icon-item'" style="padding:10px">
+<!-- 			<div title="系统管理"  data-options="iconCls:'icon-item'" style="padding:10px">
 				<a href="javascript:openPasswordModifyDialog()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-modifyPassword'" style="width: 150px;">修改密码</a>
 				<a href="javascript:logout()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-exit'" style="width: 150px;">安全退出</a>
+			</div> -->
+			
+			<div title="系统管理"  data-options="iconCls:'icon-item'" style="padding:10px">
+				<a href="javascript:openTab('系统管理','modifyPassword.jsp','icon-item')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-modifyPassword'" style="width: 150px;">修改密码</a>
+				<a href="javascript:logout()" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-exit'" style="width: 150px;">安全退出</a>
 			</div>
+			
 		</div>
 	</div>
 </body>

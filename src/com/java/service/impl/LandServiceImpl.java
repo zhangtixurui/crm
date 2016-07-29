@@ -174,10 +174,11 @@ public class LandServiceImpl implements LandService{
 //            System.out.println(entry.getKey() + ":\t" + entry.getValue());
 //        }
         
-        
-//        if(land!=null){
-//        	landDao.insert(land);
-//        }
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext*.xml");
+    	LandDao landDao = applicationContext.getBean(LandDao.class);
+        if(land!=null){
+        	landDao.insert(land);
+        }
 //        this.in();
       //把数据插入数据库
 
@@ -186,33 +187,14 @@ public class LandServiceImpl implements LandService{
         
 //        page.putField("readme", page.getHtml().xpath("//div[@id='readme']/tidyText()"));
     }
-    
-
-//    public void in(){
-//    	if(land!=null){
-//        	landDao.insert(land);
-//        }
-//    }
-    
-
-    
-    
+   
     @Override
     public void crawl() {
-    	
-    	
-    	Object obj=Spider.create( new LandServiceImpl())
-    	.addUrl("http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/");
-
-        ((Spider) obj).addPipeline(new ConsolePipeline())
-        .thread(1).run();
+    	Spider.create( new LandServiceImpl())
+		    	.addUrl("http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/")
+		        .addPipeline(new ConsolePipeline())
+		        .thread(1).run();
         
-        if(land!=null){
-        	landDao.insert(land);
-
-    }
-      
-    	
     }
 
     public static void main(String[] args) {

@@ -188,7 +188,7 @@ public class LandServiceImpl implements LandService{
     	for(int i=1;i<10;i++){
     		urls.append("http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/index_"+i+".htm"+",");
     	}
-//    	System.out.println(urls);
+
     	String[] t=urls.toString().split(",");
     	//下次任务把http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/index_1.htm....都加入任务
 

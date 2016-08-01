@@ -1,40 +1,33 @@
 package com.java.service.impl;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
 
 import org.jsoup.Jsoup;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.java.dao.LandDao;
-import com.java.dao.impl.LandDaoImpl;
 import com.java.entity.Land;
 import com.java.service.LandService;
 
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.model.OOSpider;
+import us.codecraft.webmagic.model.annotation.HelpUrl;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
 
 
-
-
-
-
-
 /**
- * @author code4crafter@gmail.com <br>
- * @since 0.3.2
+ * @author zhangti <br>
+ * 爬取国土资源首页 > 土地出让 > 出让公告 > 工业用地  信息
  */
 
 
@@ -48,11 +41,13 @@ public class LandServiceImpl implements LandService{
 	@Resource
 	private LandService landService;
 
-    private Site site = Site.me().setRetryTimes(3).setSleepTime(0);
+    private Site site = Site.me().setRetryTimes(5).setSleepTime(0);
     @Override
     public Site getSite() {
         return site;
     }
+    
+    private Page page;
     
     public static Land land;
 
@@ -61,7 +56,8 @@ public class LandServiceImpl implements LandService{
     @Override
     public void process(Page page) {
     	land=new Land();
-     page.addTargetRequests(page.getHtml().links().regex("(http://www\\.mlr\\.gov\\.cn/tdsc/land/crgg/gyyd/.*\\.htm)").all());
+    	
+    	page.addTargetRequests(page.getHtml().links().regex("(http://www\\.mlr\\.gov\\.cn/tdsc/land/crgg/gyyd/.*\\.htm)").all());
         //第1个字段 	项目标题1  ItemTitleFirst
         page.putField("itemTitleFirst", page.getHtml().xpath("[@class='zw_title']/text()").toString());
         land.setItemtitlefirst(page.getHtml().xpath("[@class='zw_title']/text()").toString());
@@ -165,22 +161,18 @@ public class LandServiceImpl implements LandService{
             page.putField("phone", matcher13.group(3));
             land.setContacts(matcher13.group(3));
 		}
-//        if(land!=null){
-//        	page.putField("land", land);
-//        }
         
 //        ResultItems resultItems=page.getResultItems();
 //        for (Map.Entry<String, Object> entry : resultItems.getAll().entrySet()) {
 //            System.out.println(entry.getKey() + ":\t" + entry.getValue());
 //        }
         
+        //对数据进行持久化操作
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext*.xml");
     	LandDao landDao = applicationContext.getBean(LandDao.class);
-        if(land!=null){
+        if(land.getItemtitlefirst()!=null){
         	landDao.insert(land);
         }
-//        this.in();
-      //把数据插入数据库
 
 
 //        page.putField("name", page.getHtml().xpath("//h1[@class='entry-title public']/strong/a/text()").toString());
@@ -190,10 +182,21 @@ public class LandServiceImpl implements LandService{
    
     @Override
     public void crawl() {
+    	//把http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/index_1.htm....都加入任务,处理分页情况
+    	StringBuffer urls=new StringBuffer();
+    	urls.append("http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/"+",");
+    	for(int i=1;i<10;i++){
+    		urls.append("http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/index_"+i+".htm"+",");
+    	}
+//    	System.out.println(urls);
+    	String[] t=urls.toString().split(",");
+    	//下次任务把http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/index_1.htm....都加入任务
+
     	Spider.create( new LandServiceImpl())
-		    	.addUrl("http://www.mlr.gov.cn/tdsc/land/crgg/gyyd/")
+		    	.addUrl(t)
 		        .addPipeline(new ConsolePipeline())
 		        .thread(1).run();
+    	
         
     }
 

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.dao.BidDao" >
+  <resultMap id="BaseResultMap" type="Bid" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="CHAR" />
+    <result column="date" property="date" jdbcType="DATE" />
+    <result column="bidName" property="bidname" jdbcType="CHAR" />
+    <result column="bidAddress" property="bidaddress" jdbcType="CHAR" />
+    <result column="bidAmount" property="bidamount" jdbcType="CHAR" />
+    <result column="url" property="url" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, title, date, bidName, bidAddress, bidAmount, url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bidinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bidinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="Bid" >
+    insert into bidinfo (id, title, date, bidName, 
+      bidAddress, bidAmount, url)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=CHAR}, #{date,jdbcType=DATE}, #{bidname,jdbcType=CHAR}, 
+      #{bidaddress,jdbcType=CHAR}, #{bidamount,jdbcType=CHAR}, #{url,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="Bid" >
+    insert into bidinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="bidname != null" >
+        bidName,
+      </if>
+      <if test="bidaddress != null" >
+        bidAddress,
+      </if>
+      <if test="bidamount != null" >
+        bidAmount,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=CHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="bidname != null" >
+        #{bidname,jdbcType=CHAR},
+      </if>
+      <if test="bidaddress != null" >
+        #{bidaddress,jdbcType=CHAR},
+      </if>
+      <if test="bidamount != null" >
+        #{bidamount,jdbcType=CHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Bid" >
+    update bidinfo
+    <set >
+      <if test="title != null" >
+        title = #{title,jdbcType=CHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=DATE},
+      </if>
+      <if test="bidname != null" >
+        bidName = #{bidname,jdbcType=CHAR},
+      </if>
+      <if test="bidaddress != null" >
+        bidAddress = #{bidaddress,jdbcType=CHAR},
+      </if>
+      <if test="bidamount != null" >
+        bidAmount = #{bidamount,jdbcType=CHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Bid" >
+    update bidinfo
+    set title = #{title,jdbcType=CHAR},
+      date = #{date,jdbcType=DATE},
+      bidName = #{bidname,jdbcType=CHAR},
+      bidAddress = #{bidaddress,jdbcType=CHAR},
+      bidAmount = #{bidamount,jdbcType=CHAR},
+      url = #{url,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

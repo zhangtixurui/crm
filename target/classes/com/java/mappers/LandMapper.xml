@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.dao.LandDao" >
+  <resultMap id="BaseResultMap" type="Land" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="ItemTitleFirst" property="itemtitlefirst" jdbcType="CHAR" />
+    <result column="ProjectRecordNumber" property="projectrecordnumber" jdbcType="CHAR" />
+    <result column="ForTheWay" property="fortheway" jdbcType="CHAR" />
+    <result column="TransferMode" property="transfermode" jdbcType="CHAR" />
+    <result column="LandLocated" property="landlocated" jdbcType="CHAR" />
+    <result column="TotalParcelArea" property="totalparcelarea" jdbcType="CHAR" />
+    <result column="LandLife" property="landlife" jdbcType="CHAR" />
+    <result column="ProjectLocation" property="projectlocation" jdbcType="CHAR" />
+    <result column="Area" property="area" jdbcType="INTEGER" />
+    <result column="GreeningRate" property="greeningrate" jdbcType="CHAR" />
+    <result column="BuildingHeightLimit" property="buildingheightlimit" jdbcType="CHAR" />
+    <result column="LandUse" property="landuse" jdbcType="CHAR" />
+    <result column="LandUseDetails" property="landusedetails" jdbcType="CHAR" />
+    <result column="InvestmentIntensity" property="investmentintensity" jdbcType="CHAR" />
+    <result column="SecurityDeposit" property="securitydeposit" jdbcType="CHAR" />
+    <result column="ValuationReportRecordNumber" property="valuationreportrecordnumber" jdbcType="CHAR" />
+    <result column="StartingPrice" property="startingprice" jdbcType="CHAR" />
+    <result column="BidIncrement" property="bidincrement" jdbcType="CHAR" />
+    <result column="Price" property="price" jdbcType="INTEGER" />
+    <result column="Auction" property="auction" jdbcType="CHAR" />
+    <result column="LandUseRightTransferPeriod" property="landuserighttransferperiod" jdbcType="CHAR" />
+    <result column="LandArea" property="landarea" jdbcType="CHAR" />
+    <result column="TheTotalArea" property="thetotalarea" jdbcType="CHAR" />
+    <result column="TheActualLandArea" property="theactuallandarea" jdbcType="CHAR" />
+    <result column="Category" property="category" jdbcType="CHAR" />
+    <result column="ListedStartTime" property="listedstarttime" jdbcType="CHAR" />
+    <result column="DeadlineListing" property="deadlinelisting" jdbcType="CHAR" />
+    <result column="SitePreparationConditions" property="sitepreparationconditions" jdbcType="CHAR" />
+    <result column="InfrastructureConstruction" property="infrastructureconstruction" jdbcType="CHAR" />
+    <result column="Remark" property="remark" jdbcType="CHAR" />
+    <result column="TitleBlock" property="titleblock" jdbcType="CHAR" />
+    <result column="PricesForLand" property="pricesforland" jdbcType="CHAR" />
+    <result column="PublishedApproveChanges" property="publishedapprovechanges" jdbcType="CHAR" />
+    <result column="ApprovedChangesToTheProjectName" property="approvedchangestotheprojectname" jdbcType="CHAR" />
+    <result column="ApproveTheChangeAuditUnit" property="approvethechangeauditunit" jdbcType="CHAR" />
+    <result column="ChangeToAdjustTheContentOfPublicity" property="changetoadjustthecontentofpublicity" jdbcType="CHAR" />
+    <result column="PublicityPeriod" property="publicityperiod" jdbcType="CHAR" />
+    <result column="LandUsers" property="landusers" jdbcType="CHAR" />
+    <result column="TransfereeUnit" property="transfereeunit" jdbcType="CHAR" />
+    <result column="LandUseConditions" property="landuseconditions" jdbcType="CHAR" />
+    <result column="ContactUnit" property="contactunit" jdbcType="CHAR" />
+    <result column="Address" property="address" jdbcType="CHAR" />
+    <result column="ZipCode" property="zipcode" jdbcType="CHAR" />
+    <result column="Phone" property="phone" jdbcType="CHAR" />
+    <result column="Contacts" property="contacts" jdbcType="CHAR" />
+    <result column="EMail" property="email" jdbcType="CHAR" />
+    <result column="AgreedStartTime" property="agreedstarttime" jdbcType="CHAR" />
+    <result column="AgreedCompletionTime" property="agreedcompletiontime" jdbcType="CHAR" />
+    <result column="AgreedToPayTime" property="agreedtopaytime" jdbcType="CHAR" />
+    <result column="TheActualStartTime" property="theactualstarttime" jdbcType="CHAR" />
+    <result column="TimeContract" property="timecontract" jdbcType="CHAR" />
+    <result column="ProjectTitleThird" property="projecttitlethird" jdbcType="CHAR" />
+    <result column="ReleaseTime" property="releasetime" jdbcType="DATE" />
+    <result column="ParcelNumber" property="parcelnumber" jdbcType="CHAR" />
+    <result column="ParcelIsLocated" property="parcelislocated" jdbcType="CHAR" />
+    <result column="LandHisRightPersonNo" property="landhisrightpersonno" jdbcType="CHAR" />
+    <result column="NameOfLandMortgage" property="nameoflandmortgage" jdbcType="CHAR" />
+    <result column="LandMortgagee" property="landmortgagee" jdbcType="CHAR" />
+    <result column="MortgageLandTenure" property="mortgagelandtenure" jdbcType="CHAR" />
+    <result column="AssessmentAmount" property="assessmentamount" jdbcType="CHAR" />
+    <result column="LandMortgageRegistrationStartDate" property="landmortgageregistrationstartdate" jdbcType="CHAR" />
+    <result column="WhereTheAdministrative" property="wheretheadministrative" jdbcType="CHAR" />
+    <result column="LandUseRightsCertificateNumber" property="landuserightscertificatenumber" jdbcType="CHAR" />
+    <result column="LandMortgagorNature" property="landmortgagornature" jdbcType="CHAR" />
+    <result column="MortgageLandUse" property="mortgagelanduse" jdbcType="CHAR" />
+    <result column="MortgageArea" property="mortgagearea" jdbcType="CHAR" />
+    <result column="MortgageAmount" property="mortgageamount" jdbcType="CHAR" />
+    <result column="LandMortgageRegistrationEndDate" property="landmortgageregistrationenddate" jdbcType="CHAR" />
+    <result column="WebSite" property="website" jdbcType="CHAR" />
+    <result column="SourceWebsite" property="sourcewebsite" jdbcType="CHAR" />
+    <result column="FullCrawl" property="fullcrawl" jdbcType="CHAR" />
+    <result column="ItemTitle" property="itemtitle" jdbcType="CHAR" />
+    <result column="AdjustedProjectName" property="adjustedprojectname" jdbcType="CHAR" />
+    <result column="ConstructionUnit" property="constructionunit" jdbcType="CHAR" />
+    <result column="ProjectName" property="projectname" jdbcType="CHAR" />
+    <result column="ConstructionArea" property="constructionarea" jdbcType="CHAR" />
+    <result column="FloorArea" property="floorarea" jdbcType="CHAR" />
+    <result column="UndergroundArea" property="undergroundarea" jdbcType="CHAR" />
+    <result column="VolumeRate" property="volumerate" jdbcType="CHAR" />
+    <result column="BuildingDensity" property="buildingdensity" jdbcType="CHAR" />
+    <result column="GreenRate" property="greenrate" jdbcType="CHAR" />
+    <result column="TheProportionOfBusiness" property="theproportionofbusiness" jdbcType="CHAR" />
+    <result column="BuildingHeight" property="buildingheight" jdbcType="CHAR" />
+    <result column="PublicService" property="publicservice" jdbcType="CHAR" />
+    <result column="DelistingVolumeRate" property="delistingvolumerate" jdbcType="CHAR" />
+    <result column="DelistingBuildingDensity" property="delistingbuildingdensity" jdbcType="CHAR" />
+    <result column="AuditUnit" property="auditunit" jdbcType="CHAR" />
+    <result column="RespectiveDistricts" property="respectivedistricts" jdbcType="CHAR" />
+    <result column="StateOwned" property="stateowned" jdbcType="CHAR" />
+    <result column="ViewCity" property="viewcity" jdbcType="CHAR" />
+    <result column="BelongsCity" property="belongscity" jdbcType="CHAR" />
+    <result column="TheStage" property="thestage" jdbcType="CHAR" />
+    <result column="WhichProcess" property="whichprocess" jdbcType="CHAR" />
+    <result column="LandSource" property="landsource" jdbcType="CHAR" />
+    <result column="LandLevel" property="landlevel" jdbcType="CHAR" />
+    <result column="NumberOfPayments" property="numberofpayments" jdbcType="CHAR" />
+    <result column="TheAgreedPaymentDate" property="theagreedpaymentdate" jdbcType="CHAR" />
+    <result column="AgreedToPayTheAmount" property="agreedtopaytheamount" jdbcType="CHAR" />
+    <result column="LandUseRight" property="landuseright" jdbcType="CHAR" />
+    <result column="LowerLimit" property="lowerlimit" jdbcType="CHAR" />
+    <result column="UpperLimit" property="upperlimit" jdbcType="CHAR" />
+    <result column="ActualCompletionTime" property="actualcompletiontime" jdbcType="CHAR" />
+    <result column="Authority" property="authority" jdbcType="CHAR" />
+    <result column="DateOfContract" property="dateofcontract" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, ItemTitleFirst, ProjectRecordNumber, ForTheWay, TransferMode, LandLocated, TotalParcelArea, 
+    LandLife, ProjectLocation, Area, GreeningRate, BuildingHeightLimit, LandUse, LandUseDetails, 
+    InvestmentIntensity, SecurityDeposit, ValuationReportRecordNumber, StartingPrice, 
+    BidIncrement, Price, Auction, LandUseRightTransferPeriod, LandArea, TheTotalArea, 
+    TheActualLandArea, Category, ListedStartTime, DeadlineListing, SitePreparationConditions, 
+    InfrastructureConstruction, Remark, TitleBlock, PricesForLand, PublishedApproveChanges, 
+    ApprovedChangesToTheProjectName, ApproveTheChangeAuditUnit, ChangeToAdjustTheContentOfPublicity, 
+    PublicityPeriod, LandUsers, TransfereeUnit, LandUseConditions, ContactUnit, Address, 
+    ZipCode, Phone, Contacts, EMail, AgreedStartTime, AgreedCompletionTime, AgreedToPayTime, 
+    TheActualStartTime, TimeContract, ProjectTitleThird, ReleaseTime, ParcelNumber, ParcelIsLocated, 
+    LandHisRightPersonNo, NameOfLandMortgage, LandMortgagee, MortgageLandTenure, AssessmentAmount, 
+    LandMortgageRegistrationStartDate, WhereTheAdministrative, LandUseRightsCertificateNumber, 
+    LandMortgagorNature, MortgageLandUse, MortgageArea, MortgageAmount, LandMortgageRegistrationEndDate, 
+    WebSite, SourceWebsite, FullCrawl, ItemTitle, AdjustedProjectName, ConstructionUnit, 
+    ProjectName, ConstructionArea, FloorArea, UndergroundArea, VolumeRate, BuildingDensity, 
+    GreenRate, TheProportionOfBusiness, BuildingHeight, PublicService, DelistingVolumeRate, 
+    DelistingBuildingDensity, AuditUnit, RespectiveDistricts, StateOwned, ViewCity, BelongsCity, 
+    TheStage, WhichProcess, LandSource, LandLevel, NumberOfPayments, TheAgreedPaymentDate, 
+    AgreedToPayTheAmount, LandUseRight, LowerLimit, UpperLimit, ActualCompletionTime, 
+    Authority, DateOfContract
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from land
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from land
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="Land" >
+    insert into land (Id, ItemTitleFirst, ProjectRecordNumber, 
+      ForTheWay, TransferMode, LandLocated, 
+      TotalParcelArea, LandLife, ProjectLocation, 
+      Area, GreeningRate, BuildingHeightLimit, 
+      LandUse, LandUseDetails, InvestmentIntensity, 
+      SecurityDeposit, ValuationReportRecordNumber, 
+      StartingPrice, BidIncrement, Price, 
+      Auction, LandUseRightTransferPeriod, LandArea, 
+      TheTotalArea, TheActualLandArea, Category, 
+      ListedStartTime, DeadlineListing, SitePreparationConditions, 
+      InfrastructureConstruction, Remark, TitleBlock, 
+      PricesForLand, PublishedApproveChanges, ApprovedChangesToTheProjectName, 
+      ApproveTheChangeAuditUnit, ChangeToAdjustTheContentOfPublicity, 
+      PublicityPeriod, LandUsers, TransfereeUnit, 
+      LandUseConditions, ContactUnit, Address, 
+      ZipCode, Phone, Contacts, EMail, 
+      AgreedStartTime, AgreedCompletionTime, AgreedToPayTime, 
+      TheActualStartTime, TimeContract, ProjectTitleThird, 
+      ReleaseTime, ParcelNumber, ParcelIsLocated, 
+      LandHisRightPersonNo, NameOfLandMortgage, LandMortgagee, 
+      MortgageLandTenure, AssessmentAmount, LandMortgageRegistrationStartDate, 
+      WhereTheAdministrative, LandUseRightsCertificateNumber, 
+      LandMortgagorNature, MortgageLandUse, MortgageArea, 
+      MortgageAmount, LandMortgageRegistrationEndDate, 
+      WebSite, SourceWebsite, FullCrawl, 
+      ItemTitle, AdjustedProjectName, ConstructionUnit, 
+      ProjectName, ConstructionArea, FloorArea, 
+      UndergroundArea, VolumeRate, BuildingDensity, 
+      GreenRate, TheProportionOfBusiness, BuildingHeight, 
+      PublicService, DelistingVolumeRate, DelistingBuildingDensity, 
+      AuditUnit, RespectiveDistricts, StateOwned, 
+      ViewCity, BelongsCity, TheStage, 
+      WhichProcess, LandSource, LandLevel, 
+      NumberOfPayments, TheAgreedPaymentDate, AgreedToPayTheAmount, 
+      LandUseRight, LowerLimit, UpperLimit, 
+      ActualCompletionTime, Authority, DateOfContract
+      )
+    values (#{id,jdbcType=INTEGER}, #{itemtitlefirst,jdbcType=CHAR}, #{projectrecordnumber,jdbcType=CHAR}, 
+      #{fortheway,jdbcType=CHAR}, #{transfermode,jdbcType=CHAR}, #{landlocated,jdbcType=CHAR}, 
+      #{totalparcelarea,jdbcType=CHAR}, #{landlife,jdbcType=CHAR}, #{projectlocation,jdbcType=CHAR}, 
+      #{area,jdbcType=INTEGER}, #{greeningrate,jdbcType=CHAR}, #{buildingheightlimit,jdbcType=CHAR}, 
+      #{landuse,jdbcType=CHAR}, #{landusedetails,jdbcType=CHAR}, #{investmentintensity,jdbcType=CHAR}, 
+      #{securitydeposit,jdbcType=CHAR}, #{valuationreportrecordnumber,jdbcType=CHAR}, 
+      #{startingprice,jdbcType=CHAR}, #{bidincrement,jdbcType=CHAR}, #{price,jdbcType=INTEGER}, 
+      #{auction,jdbcType=CHAR}, #{landuserighttransferperiod,jdbcType=CHAR}, #{landarea,jdbcType=CHAR}, 
+      #{thetotalarea,jdbcType=CHAR}, #{theactuallandarea,jdbcType=CHAR}, #{category,jdbcType=CHAR}, 
+      #{listedstarttime,jdbcType=CHAR}, #{deadlinelisting,jdbcType=CHAR}, #{sitepreparationconditions,jdbcType=CHAR}, 
+      #{infrastructureconstruction,jdbcType=CHAR}, #{remark,jdbcType=CHAR}, #{titleblock,jdbcType=CHAR}, 
+      #{pricesforland,jdbcType=CHAR}, #{publishedapprovechanges,jdbcType=CHAR}, #{approvedchangestotheprojectname,jdbcType=CHAR}, 
+      #{approvethechangeauditunit,jdbcType=CHAR}, #{changetoadjustthecontentofpublicity,jdbcType=CHAR}, 
+      #{publicityperiod,jdbcType=CHAR}, #{landusers,jdbcType=CHAR}, #{transfereeunit,jdbcType=CHAR}, 
+      #{landuseconditions,jdbcType=CHAR}, #{contactunit,jdbcType=CHAR}, #{address,jdbcType=CHAR}, 
+      #{zipcode,jdbcType=CHAR}, #{phone,jdbcType=CHAR}, #{contacts,jdbcType=CHAR}, #{email,jdbcType=CHAR}, 
+      #{agreedstarttime,jdbcType=CHAR}, #{agreedcompletiontime,jdbcType=CHAR}, #{agreedtopaytime,jdbcType=CHAR}, 
+      #{theactualstarttime,jdbcType=CHAR}, #{timecontract,jdbcType=CHAR}, #{projecttitlethird,jdbcType=CHAR}, 
+      #{releasetime,jdbcType=DATE}, #{parcelnumber,jdbcType=CHAR}, #{parcelislocated,jdbcType=CHAR}, 
+      #{landhisrightpersonno,jdbcType=CHAR}, #{nameoflandmortgage,jdbcType=CHAR}, #{landmortgagee,jdbcType=CHAR}, 
+      #{mortgagelandtenure,jdbcType=CHAR}, #{assessmentamount,jdbcType=CHAR}, #{landmortgageregistrationstartdate,jdbcType=CHAR}, 
+      #{wheretheadministrative,jdbcType=CHAR}, #{landuserightscertificatenumber,jdbcType=CHAR}, 
+      #{landmortgagornature,jdbcType=CHAR}, #{mortgagelanduse,jdbcType=CHAR}, #{mortgagearea,jdbcType=CHAR}, 
+      #{mortgageamount,jdbcType=CHAR}, #{landmortgageregistrationenddate,jdbcType=CHAR}, 
+      #{website,jdbcType=CHAR}, #{sourcewebsite,jdbcType=CHAR}, #{fullcrawl,jdbcType=CHAR}, 
+      #{itemtitle,jdbcType=CHAR}, #{adjustedprojectname,jdbcType=CHAR}, #{constructionunit,jdbcType=CHAR}, 
+      #{projectname,jdbcType=CHAR}, #{constructionarea,jdbcType=CHAR}, #{floorarea,jdbcType=CHAR}, 
+      #{undergroundarea,jdbcType=CHAR}, #{volumerate,jdbcType=CHAR}, #{buildingdensity,jdbcType=CHAR}, 
+      #{greenrate,jdbcType=CHAR}, #{theproportionofbusiness,jdbcType=CHAR}, #{buildingheight,jdbcType=CHAR}, 
+      #{publicservice,jdbcType=CHAR}, #{delistingvolumerate,jdbcType=CHAR}, #{delistingbuildingdensity,jdbcType=CHAR}, 
+      #{auditunit,jdbcType=CHAR}, #{respectivedistricts,jdbcType=CHAR}, #{stateowned,jdbcType=CHAR}, 
+      #{viewcity,jdbcType=CHAR}, #{belongscity,jdbcType=CHAR}, #{thestage,jdbcType=CHAR}, 
+      #{whichprocess,jdbcType=CHAR}, #{landsource,jdbcType=CHAR}, #{landlevel,jdbcType=CHAR}, 
+      #{numberofpayments,jdbcType=CHAR}, #{theagreedpaymentdate,jdbcType=CHAR}, #{agreedtopaytheamount,jdbcType=CHAR}, 
+      #{landuseright,jdbcType=CHAR}, #{lowerlimit,jdbcType=CHAR}, #{upperlimit,jdbcType=CHAR}, 
+      #{actualcompletiontime,jdbcType=CHAR}, #{authority,jdbcType=CHAR}, #{dateofcontract,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="Land" >
+    insert into land
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="itemtitlefirst != null" >
+        ItemTitleFirst,
+      </if>
+      <if test="projectrecordnumber != null" >
+        ProjectRecordNumber,
+      </if>
+      <if test="fortheway != null" >
+        ForTheWay,
+      </if>
+      <if test="transfermode != null" >
+        TransferMode,
+      </if>
+      <if test="landlocated != null" >
+        LandLocated,
+      </if>
+      <if test="totalparcelarea != null" >
+        TotalParcelArea,
+      </if>
+      <if test="landlife != null" >
+        LandLife,
+      </if>
+      <if test="projectlocation != null" >
+        ProjectLocation,
+      </if>
+      <if test="area != null" >
+        Area,
+      </if>
+      <if test="greeningrate != null" >
+        GreeningRate,
+      </if>
+      <if test="buildingheightlimit != null" >
+        BuildingHeightLimit,
+      </if>
+      <if test="landuse != null" >
+        LandUse,
+      </if>
+      <if test="landusedetails != null" >
+        LandUseDetails,
+      </if>
+      <if test="investmentintensity != null" >
+        InvestmentIntensity,
+      </if>
+      <if test="securitydeposit != null" >
+        SecurityDeposit,
+      </if>
+      <if test="valuationreportrecordnumber != null" >
+        ValuationReportRecordNumber,
+      </if>
+      <if test="startingprice != null" >
+        StartingPrice,
+      </if>
+      <if test="bidincrement != null" >
+        BidIncrement,
+      </if>
+      <if test="price != null" >
+        Price,
+      </if>
+      <if test="auction != null" >
+        Auction,
+      </if>
+      <if test="landuserighttransferperiod != null" >
+        LandUseRightTransferPeriod,
+      </if>
+      <if test="landarea != null" >
+        LandArea,
+      </if>
+      <if test="thetotalarea != null" >
+        TheTotalArea,
+      </if>
+      <if test="theactuallandarea != null" >
+        TheActualLandArea,
+      </if>
+      <if test="category != null" >
+        Category,
+      </if>
+      <if test="listedstarttime != null" >
+        ListedStartTime,
+      </if>
+      <if test="deadlinelisting != null" >
+        DeadlineListing,
+      </if>
+      <if test="sitepreparationconditions != null" >
+        SitePreparationConditions,
+      </if>
+      <if test="infrastructureconstruction != null" >
+        InfrastructureConstruction,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+      <if test="titleblock != null" >
+        TitleBlock,
+      </if>
+      <if test="pricesforland != null" >
+        PricesForLand,
+      </if>
+      <if test="publishedapprovechanges != null" >
+        PublishedApproveChanges,
+      </if>
+      <if test="approvedchangestotheprojectname != null" >
+        ApprovedChangesToTheProjectName,
+      </if>
+      <if test="approvethechangeauditunit != null" >
+        ApproveTheChangeAuditUnit,
+      </if>
+      <if test="changetoadjustthecontentofpublicity != null" >
+        ChangeToAdjustTheContentOfPublicity,
+      </if>
+      <if test="publicityperiod != null" >
+        PublicityPeriod,
+      </if>
+      <if test="landusers != null" >
+        LandUsers,
+      </if>
+      <if test="transfereeunit != null" >
+        TransfereeUnit,
+      </if>
+      <if test="landuseconditions != null" >
+        LandUseConditions,
+      </if>
+      <if test="contactunit != null" >
+        ContactUnit,
+      </if>
+      <if test="address != null" >
+        Address,
+      </if>
+      <if test="zipcode != null" >
+        ZipCode,
+      </if>
+      <if test="phone != null" >
+        Phone,
+      </if>
+      <if test="contacts != null" >
+        Contacts,
+      </if>
+      <if test="email != null" >
+        EMail,
+      </if>
+      <if test="agreedstarttime != null" >
+        AgreedStartTime,
+      </if>
+      <if test="agreedcompletiontime != null" >
+        AgreedCompletionTime,
+      </if>
+      <if test="agreedtopaytime != null" >
+        AgreedToPayTime,
+      </if>
+      <if test="theactualstarttime != null" >
+        TheActualStartTime,
+      </if>
+      <if test="timecontract != null" >
+        TimeContract,
+      </if>
+      <if test="projecttitlethird != null" >
+        ProjectTitleThird,
+      </if>
+      <if test="releasetime != null" >
+        ReleaseTime,
+      </if>
+      <if test="parcelnumber != null" >
+        ParcelNumber,
+      </if>
+      <if test="parcelislocated != null" >
+        ParcelIsLocated,
+      </if>
+      <if test="landhisrightpersonno != null" >
+        LandHisRightPersonNo,
+      </if>
+      <if test="nameoflandmortgage != null" >
+        NameOfLandMortgage,
+      </if>
+      <if test="landmortgagee != null" >
+        LandMortgagee,
+      </if>
+      <if test="mortgagelandtenure != null" >
+        MortgageLandTenure,
+      </if>
+      <if test="assessmentamount != null" >
+        AssessmentAmount,
+      </if>
+      <if test="landmortgageregistrationstartdate != null" >
+        LandMortgageRegistrationStartDate,
+      </if>
+      <if test="wheretheadministrative != null" >
+        WhereTheAdministrative,
+      </if>
+      <if test="landuserightscertificatenumber != null" >
+        LandUseRightsCertificateNumber,
+      </if>
+      <if test="landmortgagornature != null" >
+        LandMortgagorNature,
+      </if>
+      <if test="mortgagelanduse != null" >
+        MortgageLandUse,
+      </if>
+      <if test="mortgagearea != null" >
+        MortgageArea,
+      </if>
+      <if test="mortgageamount != null" >
+        MortgageAmount,
+      </if>
+      <if test="landmortgageregistrationenddate != null" >
+        LandMortgageRegistrationEndDate,
+      </if>
+      <if test="website != null" >
+        WebSite,
+      </if>
+      <if test="sourcewebsite != null" >
+        SourceWebsite,
+      </if>
+      <if test="fullcrawl != null" >
+        FullCrawl,
+      </if>
+      <if test="itemtitle != null" >
+        ItemTitle,
+      </if>
+      <if test="adjustedprojectname != null" >
+        AdjustedProjectName,
+      </if>
+      <if test="constructionunit != null" >
+        ConstructionUnit,
+      </if>
+      <if test="projectname != null" >
+        ProjectName,
+      </if>
+      <if test="constructionarea != null" >
+        ConstructionArea,
+      </if>
+      <if test="floorarea != null" >
+        FloorArea,
+      </if>
+      <if test="undergroundarea != null" >
+        UndergroundArea,
+      </if>
+      <if test="volumerate != null" >
+        VolumeRate,
+      </if>
+      <if test="buildingdensity != null" >
+        BuildingDensity,
+      </if>
+      <if test="greenrate != null" >
+        GreenRate,
+      </if>
+      <if test="theproportionofbusiness != null" >
+        TheProportionOfBusiness,
+      </if>
+      <if test="buildingheight != null" >
+        BuildingHeight,
+      </if>
+      <if test="publicservice != null" >
+        PublicService,
+      </if>
+      <if test="delistingvolumerate != null" >
+        DelistingVolumeRate,
+      </if>
+      <if test="delistingbuildingdensity != null" >
+        DelistingBuildingDensity,
+      </if>
+      <if test="auditunit != null" >
+        AuditUnit,
+      </if>
+      <if test="respectivedistricts != null" >
+        RespectiveDistricts,
+      </if>
+      <if test="stateowned != null" >
+        StateOwned,
+      </if>
+      <if test="viewcity != null" >
+        ViewCity,
+      </if>
+      <if test="belongscity != null" >
+        BelongsCity,
+      </if>
+      <if test="thestage != null" >
+        TheStage,
+      </if>
+      <if test="whichprocess != null" >
+        WhichProcess,
+      </if>
+      <if test="landsource != null" >
+        LandSource,
+      </if>
+      <if test="landlevel != null" >
+        LandLevel,
+      </if>
+      <if test="numberofpayments != null" >
+        NumberOfPayments,
+      </if>
+      <if test="theagreedpaymentdate != null" >
+        TheAgreedPaymentDate,
+      </if>
+      <if test="agreedtopaytheamount != null" >
+        AgreedToPayTheAmount,
+      </if>
+      <if test="landuseright != null" >
+        LandUseRight,
+      </if>
+      <if test="lowerlimit != null" >
+        LowerLimit,
+      </if>
+      <if test="upperlimit != null" >
+        UpperLimit,
+      </if>
+      <if test="actualcompletiontime != null" >
+        ActualCompletionTime,
+      </if>
+      <if test="authority != null" >
+        Authority,
+      </if>
+      <if test="dateofcontract != null" >
+        DateOfContract,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="itemtitlefirst != null" >
+        #{itemtitlefirst,jdbcType=CHAR},
+      </if>
+      <if test="projectrecordnumber != null" >
+        #{projectrecordnumber,jdbcType=CHAR},
+      </if>
+      <if test="fortheway != null" >
+        #{fortheway,jdbcType=CHAR},
+      </if>
+      <if test="transfermode != null" >
+        #{transfermode,jdbcType=CHAR},
+      </if>
+      <if test="landlocated != null" >
+        #{landlocated,jdbcType=CHAR},
+      </if>
+      <if test="totalparcelarea != null" >
+        #{totalparcelarea,jdbcType=CHAR},
+      </if>
+      <if test="landlife != null" >
+        #{landlife,jdbcType=CHAR},
+      </if>
+      <if test="projectlocation != null" >
+        #{projectlocation,jdbcType=CHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=INTEGER},
+      </if>
+      <if test="greeningrate != null" >
+        #{greeningrate,jdbcType=CHAR},
+      </if>
+      <if test="buildingheightlimit != null" >
+        #{buildingheightlimit,jdbcType=CHAR},
+      </if>
+      <if test="landuse != null" >
+        #{landuse,jdbcType=CHAR},
+      </if>
+      <if test="landusedetails != null" >
+        #{landusedetails,jdbcType=CHAR},
+      </if>
+      <if test="investmentintensity != null" >
+        #{investmentintensity,jdbcType=CHAR},
+      </if>
+      <if test="securitydeposit != null" >
+        #{securitydeposit,jdbcType=CHAR},
+      </if>
+      <if test="valuationreportrecordnumber != null" >
+        #{valuationreportrecordnumber,jdbcType=CHAR},
+      </if>
+      <if test="startingprice != null" >
+        #{startingprice,jdbcType=CHAR},
+      </if>
+      <if test="bidincrement != null" >
+        #{bidincrement,jdbcType=CHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="auction != null" >
+        #{auction,jdbcType=CHAR},
+      </if>
+      <if test="landuserighttransferperiod != null" >
+        #{landuserighttransferperiod,jdbcType=CHAR},
+      </if>
+      <if test="landarea != null" >
+        #{landarea,jdbcType=CHAR},
+      </if>
+      <if test="thetotalarea != null" >
+        #{thetotalarea,jdbcType=CHAR},
+      </if>
+      <if test="theactuallandarea != null" >
+        #{theactuallandarea,jdbcType=CHAR},
+      </if>
+      <if test="category != null" >
+        #{category,jdbcType=CHAR},
+      </if>
+      <if test="listedstarttime != null" >
+        #{listedstarttime,jdbcType=CHAR},
+      </if>
+      <if test="deadlinelisting != null" >
+        #{deadlinelisting,jdbcType=CHAR},
+      </if>
+      <if test="sitepreparationconditions != null" >
+        #{sitepreparationconditions,jdbcType=CHAR},
+      </if>
+      <if test="infrastructureconstruction != null" >
+        #{infrastructureconstruction,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=CHAR},
+      </if>
+      <if test="titleblock != null" >
+        #{titleblock,jdbcType=CHAR},
+      </if>
+      <if test="pricesforland != null" >
+        #{pricesforland,jdbcType=CHAR},
+      </if>
+      <if test="publishedapprovechanges != null" >
+        #{publishedapprovechanges,jdbcType=CHAR},
+      </if>
+      <if test="approvedchangestotheprojectname != null" >
+        #{approvedchangestotheprojectname,jdbcType=CHAR},
+      </if>
+      <if test="approvethechangeauditunit != null" >
+        #{approvethechangeauditunit,jdbcType=CHAR},
+      </if>
+      <if test="changetoadjustthecontentofpublicity != null" >
+        #{changetoadjustthecontentofpublicity,jdbcType=CHAR},
+      </if>
+      <if test="publicityperiod != null" >
+        #{publicityperiod,jdbcType=CHAR},
+      </if>
+      <if test="landusers != null" >
+        #{landusers,jdbcType=CHAR},
+      </if>
+      <if test="transfereeunit != null" >
+        #{transfereeunit,jdbcType=CHAR},
+      </if>
+      <if test="landuseconditions != null" >
+        #{landuseconditions,jdbcType=CHAR},
+      </if>
+      <if test="contactunit != null" >
+        #{contactunit,jdbcType=CHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=CHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=CHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=CHAR},
+      </if>
+      <if test="contacts != null" >
+        #{contacts,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=CHAR},
+      </if>
+      <if test="agreedstarttime != null" >
+        #{agreedstarttime,jdbcType=CHAR},
+      </if>
+      <if test="agreedcompletiontime != null" >
+        #{agreedcompletiontime,jdbcType=CHAR},
+      </if>
+      <if test="agreedtopaytime != null" >
+        #{agreedtopaytime,jdbcType=CHAR},
+      </if>
+      <if test="theactualstarttime != null" >
+        #{theactualstarttime,jdbcType=CHAR},
+      </if>
+      <if test="timecontract != null" >
+        #{timecontract,jdbcType=CHAR},
+      </if>
+      <if test="projecttitlethird != null" >
+        #{projecttitlethird,jdbcType=CHAR},
+      </if>
+      <if test="releasetime != null" >
+        #{releasetime,jdbcType=DATE},
+      </if>
+      <if test="parcelnumber != null" >
+        #{parcelnumber,jdbcType=CHAR},
+      </if>
+      <if test="parcelislocated != null" >
+        #{parcelislocated,jdbcType=CHAR},
+      </if>
+      <if test="landhisrightpersonno != null" >
+        #{landhisrightpersonno,jdbcType=CHAR},
+      </if>
+      <if test="nameoflandmortgage != null" >
+        #{nameoflandmortgage,jdbcType=CHAR},
+      </if>
+      <if test="landmortgagee != null" >
+        #{landmortgagee,jdbcType=CHAR},
+      </if>
+      <if test="mortgagelandtenure != null" >
+        #{mortgagelandtenure,jdbcType=CHAR},
+      </if>
+      <if test="assessmentamount != null" >
+        #{assessmentamount,jdbcType=CHAR},
+      </if>
+      <if test="landmortgageregistrationstartdate != null" >
+        #{landmortgageregistrationstartdate,jdbcType=CHAR},
+      </if>
+      <if test="wheretheadministrative != null" >
+        #{wheretheadministrative,jdbcType=CHAR},
+      </if>
+      <if test="landuserightscertificatenumber != null" >
+        #{landuserightscertificatenumber,jdbcType=CHAR},
+      </if>
+      <if test="landmortgagornature != null" >
+        #{landmortgagornature,jdbcType=CHAR},
+      </if>
+      <if test="mortgagelanduse != null" >
+        #{mortgagelanduse,jdbcType=CHAR},
+      </if>
+      <if test="mortgagearea != null" >
+        #{mortgagearea,jdbcType=CHAR},
+      </if>
+      <if test="mortgageamount != null" >
+        #{mortgageamount,jdbcType=CHAR},
+      </if>
+      <if test="landmortgageregistrationenddate != null" >
+        #{landmortgageregistrationenddate,jdbcType=CHAR},
+      </if>
+      <if test="website != null" >
+        #{website,jdbcType=CHAR},
+      </if>
+      <if test="sourcewebsite != null" >
+        #{sourcewebsite,jdbcType=CHAR},
+      </if>
+      <if test="fullcrawl != null" >
+        #{fullcrawl,jdbcType=CHAR},
+      </if>
+      <if test="itemtitle != null" >
+        #{itemtitle,jdbcType=CHAR},
+      </if>
+      <if test="adjustedprojectname != null" >
+        #{adjustedprojectname,jdbcType=CHAR},
+      </if>
+      <if test="constructionunit != null" >
+        #{constructionunit,jdbcType=CHAR},
+      </if>
+      <if test="projectname != null" >
+        #{projectname,jdbcType=CHAR},
+      </if>
+      <if test="constructionarea != null" >
+        #{constructionarea,jdbcType=CHAR},
+      </if>
+      <if test="floorarea != null" >
+        #{floorarea,jdbcType=CHAR},
+      </if>
+      <if test="undergroundarea != null" >
+        #{undergroundarea,jdbcType=CHAR},
+      </if>
+      <if test="volumerate != null" >
+        #{volumerate,jdbcType=CHAR},
+      </if>
+      <if test="buildingdensity != null" >
+        #{buildingdensity,jdbcType=CHAR},
+      </if>
+      <if test="greenrate != null" >
+        #{greenrate,jdbcType=CHAR},
+      </if>
+      <if test="theproportionofbusiness != null" >
+        #{theproportionofbusiness,jdbcType=CHAR},
+      </if>
+      <if test="buildingheight != null" >
+        #{buildingheight,jdbcType=CHAR},
+      </if>
+      <if test="publicservice != null" >
+        #{publicservice,jdbcType=CHAR},
+      </if>
+      <if test="delistingvolumerate != null" >
+        #{delistingvolumerate,jdbcType=CHAR},
+      </if>
+      <if test="delistingbuildingdensity != null" >
+        #{delistingbuildingdensity,jdbcType=CHAR},
+      </if>
+      <if test="auditunit != null" >
+        #{auditunit,jdbcType=CHAR},
+      </if>
+      <if test="respectivedistricts != null" >
+        #{respectivedistricts,jdbcType=CHAR},
+      </if>
+      <if test="stateowned != null" >
+        #{stateowned,jdbcType=CHAR},
+      </if>
+      <if test="viewcity != null" >
+        #{viewcity,jdbcType=CHAR},
+      </if>
+      <if test="belongscity != null" >
+        #{belongscity,jdbcType=CHAR},
+      </if>
+      <if test="thestage != null" >
+        #{thestage,jdbcType=CHAR},
+      </if>
+      <if test="whichprocess != null" >
+        #{whichprocess,jdbcType=CHAR},
+      </if>
+      <if test="landsource != null" >
+        #{landsource,jdbcType=CHAR},
+      </if>
+      <if test="landlevel != null" >
+        #{landlevel,jdbcType=CHAR},
+      </if>
+      <if test="numberofpayments != null" >
+        #{numberofpayments,jdbcType=CHAR},
+      </if>
+      <if test="theagreedpaymentdate != null" >
+        #{theagreedpaymentdate,jdbcType=CHAR},
+      </if>
+      <if test="agreedtopaytheamount != null" >
+        #{agreedtopaytheamount,jdbcType=CHAR},
+      </if>
+      <if test="landuseright != null" >
+        #{landuseright,jdbcType=CHAR},
+      </if>
+      <if test="lowerlimit != null" >
+        #{lowerlimit,jdbcType=CHAR},
+      </if>
+      <if test="upperlimit != null" >
+        #{upperlimit,jdbcType=CHAR},
+      </if>
+      <if test="actualcompletiontime != null" >
+        #{actualcompletiontime,jdbcType=CHAR},
+      </if>
+      <if test="authority != null" >
+        #{authority,jdbcType=CHAR},
+      </if>
+      <if test="dateofcontract != null" >
+        #{dateofcontract,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Land" >
+    update land
+    <set >
+      <if test="itemtitlefirst != null" >
+        ItemTitleFirst = #{itemtitlefirst,jdbcType=CHAR},
+      </if>
+      <if test="projectrecordnumber != null" >
+        ProjectRecordNumber = #{projectrecordnumber,jdbcType=CHAR},
+      </if>
+      <if test="fortheway != null" >
+        ForTheWay = #{fortheway,jdbcType=CHAR},
+      </if>
+      <if test="transfermode != null" >
+        TransferMode = #{transfermode,jdbcType=CHAR},
+      </if>
+      <if test="landlocated != null" >
+        LandLocated = #{landlocated,jdbcType=CHAR},
+      </if>
+      <if test="totalparcelarea != null" >
+        TotalParcelArea = #{totalparcelarea,jdbcType=CHAR},
+      </if>
+      <if test="landlife != null" >
+        LandLife = #{landlife,jdbcType=CHAR},
+      </if>
+      <if test="projectlocation != null" >
+        ProjectLocation = #{projectlocation,jdbcType=CHAR},
+      </if>
+      <if test="area != null" >
+        Area = #{area,jdbcType=INTEGER},
+      </if>
+      <if test="greeningrate != null" >
+        GreeningRate = #{greeningrate,jdbcType=CHAR},
+      </if>
+      <if test="buildingheightlimit != null" >
+        BuildingHeightLimit = #{buildingheightlimit,jdbcType=CHAR},
+      </if>
+      <if test="landuse != null" >
+        LandUse = #{landuse,jdbcType=CHAR},
+      </if>
+      <if test="landusedetails != null" >
+        LandUseDetails = #{landusedetails,jdbcType=CHAR},
+      </if>
+      <if test="investmentintensity != null" >
+        InvestmentIntensity = #{investmentintensity,jdbcType=CHAR},
+      </if>
+      <if test="securitydeposit != null" >
+        SecurityDeposit = #{securitydeposit,jdbcType=CHAR},
+      </if>
+      <if test="valuationreportrecordnumber != null" >
+        ValuationReportRecordNumber = #{valuationreportrecordnumber,jdbcType=CHAR},
+      </if>
+      <if test="startingprice != null" >
+        StartingPrice = #{startingprice,jdbcType=CHAR},
+      </if>
+      <if test="bidincrement != null" >
+        BidIncrement = #{bidincrement,jdbcType=CHAR},
+      </if>
+      <if test="price != null" >
+        Price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="auction != null" >
+        Auction = #{auction,jdbcType=CHAR},
+      </if>
+      <if test="landuserighttransferperiod != null" >
+        LandUseRightTransferPeriod = #{landuserighttransferperiod,jdbcType=CHAR},
+      </if>
+      <if test="landarea != null" >
+        LandArea = #{landarea,jdbcType=CHAR},
+      </if>
+      <if test="thetotalarea != null" >
+        TheTotalArea = #{thetotalarea,jdbcType=CHAR},
+      </if>
+      <if test="theactuallandarea != null" >
+        TheActualLandArea = #{theactuallandarea,jdbcType=CHAR},
+      </if>
+      <if test="category != null" >
+        Category = #{category,jdbcType=CHAR},
+      </if>
+      <if test="listedstarttime != null" >
+        ListedStartTime = #{listedstarttime,jdbcType=CHAR},
+      </if>
+      <if test="deadlinelisting != null" >
+        DeadlineListing = #{deadlinelisting,jdbcType=CHAR},
+      </if>
+      <if test="sitepreparationconditions != null" >
+        SitePreparationConditions = #{sitepreparationconditions,jdbcType=CHAR},
+      </if>
+      <if test="infrastructureconstruction != null" >
+        InfrastructureConstruction = #{infrastructureconstruction,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=CHAR},
+      </if>
+      <if test="titleblock != null" >
+        TitleBlock = #{titleblock,jdbcType=CHAR},
+      </if>
+      <if test="pricesforland != null" >
+        PricesForLand = #{pricesforland,jdbcType=CHAR},
+      </if>
+      <if test="publishedapprovechanges != null" >
+        PublishedApproveChanges = #{publishedapprovechanges,jdbcType=CHAR},
+      </if>
+      <if test="approvedchangestotheprojectname != null" >
+        ApprovedChangesToTheProjectName = #{approvedchangestotheprojectname,jdbcType=CHAR},
+      </if>
+      <if test="approvethechangeauditunit != null" >
+        ApproveTheChangeAuditUnit = #{approvethechangeauditunit,jdbcType=CHAR},
+      </if>
+      <if test="changetoadjustthecontentofpublicity != null" >
+        ChangeToAdjustTheContentOfPublicity = #{changetoadjustthecontentofpublicity,jdbcType=CHAR},
+      </if>
+      <if test="publicityperiod != null" >
+        PublicityPeriod = #{publicityperiod,jdbcType=CHAR},
+      </if>
+      <if test="landusers != null" >
+        LandUsers = #{landusers,jdbcType=CHAR},
+      </if>
+      <if test="transfereeunit != null" >
+        TransfereeUnit = #{transfereeunit,jdbcType=CHAR},
+      </if>
+      <if test="landuseconditions != null" >
+        LandUseConditions = #{landuseconditions,jdbcType=CHAR},
+      </if>
+      <if test="contactunit != null" >
+        ContactUnit = #{contactunit,jdbcType=CHAR},
+      </if>
+      <if test="address != null" >
+        Address = #{address,jdbcType=CHAR},
+      </if>
+      <if test="zipcode != null" >
+        ZipCode = #{zipcode,jdbcType=CHAR},
+      </if>
+      <if test="phone != null" >
+        Phone = #{phone,jdbcType=CHAR},
+      </if>
+      <if test="contacts != null" >
+        Contacts = #{contacts,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        EMail = #{email,jdbcType=CHAR},
+      </if>
+      <if test="agreedstarttime != null" >
+        AgreedStartTime = #{agreedstarttime,jdbcType=CHAR},
+      </if>
+      <if test="agreedcompletiontime != null" >
+        AgreedCompletionTime = #{agreedcompletiontime,jdbcType=CHAR},
+      </if>
+      <if test="agreedtopaytime != null" >
+        AgreedToPayTime = #{agreedtopaytime,jdbcType=CHAR},
+      </if>
+      <if test="theactualstarttime != null" >
+        TheActualStartTime = #{theactualstarttime,jdbcType=CHAR},
+      </if>
+      <if test="timecontract != null" >
+        TimeContract = #{timecontract,jdbcType=CHAR},
+      </if>
+      <if test="projecttitlethird != null" >
+        ProjectTitleThird = #{projecttitlethird,jdbcType=CHAR},
+      </if>
+      <if test="releasetime != null" >
+        ReleaseTime = #{releasetime,jdbcType=DATE},
+      </if>
+      <if test="parcelnumber != null" >
+        ParcelNumber = #{parcelnumber,jdbcType=CHAR},
+      </if>
+      <if test="parcelislocated != null" >
+        ParcelIsLocated = #{parcelislocated,jdbcType=CHAR},
+      </if>
+      <if test="landhisrightpersonno != null" >
+        LandHisRightPersonNo = #{landhisrightpersonno,jdbcType=CHAR},
+      </if>
+      <if test="nameoflandmortgage != null" >
+        NameOfLandMortgage = #{nameoflandmortgage,jdbcType=CHAR},
+      </if>
+      <if test="landmortgagee != null" >
+        LandMortgagee = #{landmortgagee,jdbcType=CHAR},
+      </if>
+      <if test="mortgagelandtenure != null" >
+        MortgageLandTenure = #{mortgagelandtenure,jdbcType=CHAR},
+      </if>
+      <if test="assessmentamount != null" >
+        AssessmentAmount = #{assessmentamount,jdbcType=CHAR},
+      </if>
+      <if test="landmortgageregistrationstartdate != null" >
+        LandMortgageRegistrationStartDate = #{landmortgageregistrationstartdate,jdbcType=CHAR},
+      </if>
+      <if test="wheretheadministrative != null" >
+        WhereTheAdministrative = #{wheretheadministrative,jdbcType=CHAR},
+      </if>
+      <if test="landuserightscertificatenumber != null" >
+        LandUseRightsCertificateNumber = #{landuserightscertificatenumber,jdbcType=CHAR},
+      </if>
+      <if test="landmortgagornature != null" >
+        LandMortgagorNature = #{landmortgagornature,jdbcType=CHAR},
+      </if>
+      <if test="mortgagelanduse != null" >
+        MortgageLandUse = #{mortgagelanduse,jdbcType=CHAR},
+      </if>
+      <if test="mortgagearea != null" >
+        MortgageArea = #{mortgagearea,jdbcType=CHAR},
+      </if>
+      <if test="mortgageamount != null" >
+        MortgageAmount = #{mortgageamount,jdbcType=CHAR},
+      </if>
+      <if test="landmortgageregistrationenddate != null" >
+        LandMortgageRegistrationEndDate = #{landmortgageregistrationenddate,jdbcType=CHAR},
+      </if>
+      <if test="website != null" >
+        WebSite = #{website,jdbcType=CHAR},
+      </if>
+      <if test="sourcewebsite != null" >
+        SourceWebsite = #{sourcewebsite,jdbcType=CHAR},
+      </if>
+      <if test="fullcrawl != null" >
+        FullCrawl = #{fullcrawl,jdbcType=CHAR},
+      </if>
+      <if test="itemtitle != null" >
+        ItemTitle = #{itemtitle,jdbcType=CHAR},
+      </if>
+      <if test="adjustedprojectname != null" >
+        AdjustedProjectName = #{adjustedprojectname,jdbcType=CHAR},
+      </if>
+      <if test="constructionunit != null" >
+        ConstructionUnit = #{constructionunit,jdbcType=CHAR},
+      </if>
+      <if test="projectname != null" >
+        ProjectName = #{projectname,jdbcType=CHAR},
+      </if>
+      <if test="constructionarea != null" >
+        ConstructionArea = #{constructionarea,jdbcType=CHAR},
+      </if>
+      <if test="floorarea != null" >
+        FloorArea = #{floorarea,jdbcType=CHAR},
+      </if>
+      <if test="undergroundarea != null" >
+        UndergroundArea = #{undergroundarea,jdbcType=CHAR},
+      </if>
+      <if test="volumerate != null" >
+        VolumeRate = #{volumerate,jdbcType=CHAR},
+      </if>
+      <if test="buildingdensity != null" >
+        BuildingDensity = #{buildingdensity,jdbcType=CHAR},
+      </if>
+      <if test="greenrate != null" >
+        GreenRate = #{greenrate,jdbcType=CHAR},
+      </if>
+      <if test="theproportionofbusiness != null" >
+        TheProportionOfBusiness = #{theproportionofbusiness,jdbcType=CHAR},
+      </if>
+      <if test="buildingheight != null" >
+        BuildingHeight = #{buildingheight,jdbcType=CHAR},
+      </if>
+      <if test="publicservice != null" >
+        PublicService = #{publicservice,jdbcType=CHAR},
+      </if>
+      <if test="delistingvolumerate != null" >
+        DelistingVolumeRate = #{delistingvolumerate,jdbcType=CHAR},
+      </if>
+      <if test="delistingbuildingdensity != null" >
+        DelistingBuildingDensity = #{delistingbuildingdensity,jdbcType=CHAR},
+      </if>
+      <if test="auditunit != null" >
+        AuditUnit = #{auditunit,jdbcType=CHAR},
+      </if>
+      <if test="respectivedistricts != null" >
+        RespectiveDistricts = #{respectivedistricts,jdbcType=CHAR},
+      </if>
+      <if test="stateowned != null" >
+        StateOwned = #{stateowned,jdbcType=CHAR},
+      </if>
+      <if test="viewcity != null" >
+        ViewCity = #{viewcity,jdbcType=CHAR},
+      </if>
+      <if test="belongscity != null" >
+        BelongsCity = #{belongscity,jdbcType=CHAR},
+      </if>
+      <if test="thestage != null" >
+        TheStage = #{thestage,jdbcType=CHAR},
+      </if>
+      <if test="whichprocess != null" >
+        WhichProcess = #{whichprocess,jdbcType=CHAR},
+      </if>
+      <if test="landsource != null" >
+        LandSource = #{landsource,jdbcType=CHAR},
+      </if>
+      <if test="landlevel != null" >
+        LandLevel = #{landlevel,jdbcType=CHAR},
+      </if>
+      <if test="numberofpayments != null" >
+        NumberOfPayments = #{numberofpayments,jdbcType=CHAR},
+      </if>
+      <if test="theagreedpaymentdate != null" >
+        TheAgreedPaymentDate = #{theagreedpaymentdate,jdbcType=CHAR},
+      </if>
+      <if test="agreedtopaytheamount != null" >
+        AgreedToPayTheAmount = #{agreedtopaytheamount,jdbcType=CHAR},
+      </if>
+      <if test="landuseright != null" >
+        LandUseRight = #{landuseright,jdbcType=CHAR},
+      </if>
+      <if test="lowerlimit != null" >
+        LowerLimit = #{lowerlimit,jdbcType=CHAR},
+      </if>
+      <if test="upperlimit != null" >
+        UpperLimit = #{upperlimit,jdbcType=CHAR},
+      </if>
+      <if test="actualcompletiontime != null" >
+        ActualCompletionTime = #{actualcompletiontime,jdbcType=CHAR},
+      </if>
+      <if test="authority != null" >
+        Authority = #{authority,jdbcType=CHAR},
+      </if>
+      <if test="dateofcontract != null" >
+        DateOfContract = #{dateofcontract,jdbcType=CHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Land" >
+    update land
+    set ItemTitleFirst = #{itemtitlefirst,jdbcType=CHAR},
+      ProjectRecordNumber = #{projectrecordnumber,jdbcType=CHAR},
+      ForTheWay = #{fortheway,jdbcType=CHAR},
+      TransferMode = #{transfermode,jdbcType=CHAR},
+      LandLocated = #{landlocated,jdbcType=CHAR},
+      TotalParcelArea = #{totalparcelarea,jdbcType=CHAR},
+      LandLife = #{landlife,jdbcType=CHAR},
+      ProjectLocation = #{projectlocation,jdbcType=CHAR},
+      Area = #{area,jdbcType=INTEGER},
+      GreeningRate = #{greeningrate,jdbcType=CHAR},
+      BuildingHeightLimit = #{buildingheightlimit,jdbcType=CHAR},
+      LandUse = #{landuse,jdbcType=CHAR},
+      LandUseDetails = #{landusedetails,jdbcType=CHAR},
+      InvestmentIntensity = #{investmentintensity,jdbcType=CHAR},
+      SecurityDeposit = #{securitydeposit,jdbcType=CHAR},
+      ValuationReportRecordNumber = #{valuationreportrecordnumber,jdbcType=CHAR},
+      StartingPrice = #{startingprice,jdbcType=CHAR},
+      BidIncrement = #{bidincrement,jdbcType=CHAR},
+      Price = #{price,jdbcType=INTEGER},
+      Auction = #{auction,jdbcType=CHAR},
+      LandUseRightTransferPeriod = #{landuserighttransferperiod,jdbcType=CHAR},
+      LandArea = #{landarea,jdbcType=CHAR},
+      TheTotalArea = #{thetotalarea,jdbcType=CHAR},
+      TheActualLandArea = #{theactuallandarea,jdbcType=CHAR},
+      Category = #{category,jdbcType=CHAR},
+      ListedStartTime = #{listedstarttime,jdbcType=CHAR},
+      DeadlineListing = #{deadlinelisting,jdbcType=CHAR},
+      SitePreparationConditions = #{sitepreparationconditions,jdbcType=CHAR},
+      InfrastructureConstruction = #{infrastructureconstruction,jdbcType=CHAR},
+      Remark = #{remark,jdbcType=CHAR},
+      TitleBlock = #{titleblock,jdbcType=CHAR},
+      PricesForLand = #{pricesforland,jdbcType=CHAR},
+      PublishedApproveChanges = #{publishedapprovechanges,jdbcType=CHAR},
+      ApprovedChangesToTheProjectName = #{approvedchangestotheprojectname,jdbcType=CHAR},
+      ApproveTheChangeAuditUnit = #{approvethechangeauditunit,jdbcType=CHAR},
+      ChangeToAdjustTheContentOfPublicity = #{changetoadjustthecontentofpublicity,jdbcType=CHAR},
+      PublicityPeriod = #{publicityperiod,jdbcType=CHAR},
+      LandUsers = #{landusers,jdbcType=CHAR},
+      TransfereeUnit = #{transfereeunit,jdbcType=CHAR},
+      LandUseConditions = #{landuseconditions,jdbcType=CHAR},
+      ContactUnit = #{contactunit,jdbcType=CHAR},
+      Address = #{address,jdbcType=CHAR},
+      ZipCode = #{zipcode,jdbcType=CHAR},
+      Phone = #{phone,jdbcType=CHAR},
+      Contacts = #{contacts,jdbcType=CHAR},
+      EMail = #{email,jdbcType=CHAR},
+      AgreedStartTime = #{agreedstarttime,jdbcType=CHAR},
+      AgreedCompletionTime = #{agreedcompletiontime,jdbcType=CHAR},
+      AgreedToPayTime = #{agreedtopaytime,jdbcType=CHAR},
+      TheActualStartTime = #{theactualstarttime,jdbcType=CHAR},
+      TimeContract = #{timecontract,jdbcType=CHAR},
+      ProjectTitleThird = #{projecttitlethird,jdbcType=CHAR},
+      ReleaseTime = #{releasetime,jdbcType=DATE},
+      ParcelNumber = #{parcelnumber,jdbcType=CHAR},
+      ParcelIsLocated = #{parcelislocated,jdbcType=CHAR},
+      LandHisRightPersonNo = #{landhisrightpersonno,jdbcType=CHAR},
+      NameOfLandMortgage = #{nameoflandmortgage,jdbcType=CHAR},
+      LandMortgagee = #{landmortgagee,jdbcType=CHAR},
+      MortgageLandTenure = #{mortgagelandtenure,jdbcType=CHAR},
+      AssessmentAmount = #{assessmentamount,jdbcType=CHAR},
+      LandMortgageRegistrationStartDate = #{landmortgageregistrationstartdate,jdbcType=CHAR},
+      WhereTheAdministrative = #{wheretheadministrative,jdbcType=CHAR},
+      LandUseRightsCertificateNumber = #{landuserightscertificatenumber,jdbcType=CHAR},
+      LandMortgagorNature = #{landmortgagornature,jdbcType=CHAR},
+      MortgageLandUse = #{mortgagelanduse,jdbcType=CHAR},
+      MortgageArea = #{mortgagearea,jdbcType=CHAR},
+      MortgageAmount = #{mortgageamount,jdbcType=CHAR},
+      LandMortgageRegistrationEndDate = #{landmortgageregistrationenddate,jdbcType=CHAR},
+      WebSite = #{website,jdbcType=CHAR},
+      SourceWebsite = #{sourcewebsite,jdbcType=CHAR},
+      FullCrawl = #{fullcrawl,jdbcType=CHAR},
+      ItemTitle = #{itemtitle,jdbcType=CHAR},
+      AdjustedProjectName = #{adjustedprojectname,jdbcType=CHAR},
+      ConstructionUnit = #{constructionunit,jdbcType=CHAR},
+      ProjectName = #{projectname,jdbcType=CHAR},
+      ConstructionArea = #{constructionarea,jdbcType=CHAR},
+      FloorArea = #{floorarea,jdbcType=CHAR},
+      UndergroundArea = #{undergroundarea,jdbcType=CHAR},
+      VolumeRate = #{volumerate,jdbcType=CHAR},
+      BuildingDensity = #{buildingdensity,jdbcType=CHAR},
+      GreenRate = #{greenrate,jdbcType=CHAR},
+      TheProportionOfBusiness = #{theproportionofbusiness,jdbcType=CHAR},
+      BuildingHeight = #{buildingheight,jdbcType=CHAR},
+      PublicService = #{publicservice,jdbcType=CHAR},
+      DelistingVolumeRate = #{delistingvolumerate,jdbcType=CHAR},
+      DelistingBuildingDensity = #{delistingbuildingdensity,jdbcType=CHAR},
+      AuditUnit = #{auditunit,jdbcType=CHAR},
+      RespectiveDistricts = #{respectivedistricts,jdbcType=CHAR},
+      StateOwned = #{stateowned,jdbcType=CHAR},
+      ViewCity = #{viewcity,jdbcType=CHAR},
+      BelongsCity = #{belongscity,jdbcType=CHAR},
+      TheStage = #{thestage,jdbcType=CHAR},
+      WhichProcess = #{whichprocess,jdbcType=CHAR},
+      LandSource = #{landsource,jdbcType=CHAR},
+      LandLevel = #{landlevel,jdbcType=CHAR},
+      NumberOfPayments = #{numberofpayments,jdbcType=CHAR},
+      TheAgreedPaymentDate = #{theagreedpaymentdate,jdbcType=CHAR},
+      AgreedToPayTheAmount = #{agreedtopaytheamount,jdbcType=CHAR},
+      LandUseRight = #{landuseright,jdbcType=CHAR},
+      LowerLimit = #{lowerlimit,jdbcType=CHAR},
+      UpperLimit = #{upperlimit,jdbcType=CHAR},
+      ActualCompletionTime = #{actualcompletiontime,jdbcType=CHAR},
+      Authority = #{authority,jdbcType=CHAR},
+      DateOfContract = #{dateofcontract,jdbcType=CHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
